@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .bottom-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease-out;
+            transform: translateY(0);
+        }
+
+        .bottom-bar.hide {
+            transform: translateY(100%);
+        }
+
+        .date-field {
+            display: block;
+            width: 90%;
+            max-width: 250px;
+            height: 30px;
+            padding: 5px;
+            background-color: #fff;
+            color: #222;
+            border: 2px solid #222;
+            border-radius: 15px;
+            font-size: 14px;
+            text-align: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe id="website_iframe"
+        src="https://party-party-web-in-app.fe.joyparty.tw/user-activity-notification?activityTime=<?php echo time(); ?>"></iframe>
+    <div class="bottom-bar">
+        <input type="date" id="date_field" class="date-field" value="<?php echo date('Y-m-d'); ?>">
+    </div>
+    </div>
+    <script>
+        const dateField = document.getElementById('date_field');
+        const websiteIframe = document.getElementById('website_iframe');
+        let lastScrollPosition = 0;
+        let isBottomBarHidden = false;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const localTimestamp = today.getTime() / 1000;
+        websiteIframe.src = `https://party-party-web-in-app.fe.joyparty.tw/user-activity-notification?activityTime=${localTimestamp}`;
+        dateField.valueAsDate = today;
+
+        dateField.addEventListener('input', () => {
+            const date = new Date(dateField.value);
+            date.setHours(0, 0, 0, 0);
+            const localTimestamp = date.getTime() / 1000;
+            websiteIframe.src = `https://party-party-web-in-app.fe.joyparty.tw/user-activity-notification?activityTime=${localTimestamp}`;
+        });
+
+        websiteIframe.addEventListener('load', () => {
+            websiteIframe.contentWindow.addEventListener('scroll', () => {
+                const currentScrollPosition = websiteIframe.contentWindow.pageYOffset;
+                if (currentScrollPosition > lastScrollPosition && !isBottomBarHidden) {
+                    // scrolling down, hide bottom bar
+                    document.querySelector('.bottom-bar').classList.add('hide');
+                    isBottomBarHidden = true;
+                } else if (currentScrollPosition < lastScrollPosition && isBottomBarHidden) {
+                    // scrolling up, show bottom bar
+                    document.querySelector('.bottom-bar').classList.remove('hide');
+                    isBottomBarHidden = false;
+                }
+                lastScrollPosition = currentScrollPosition;
+            });
+        });
+
+    </script>
+</body>
+
+</html>
