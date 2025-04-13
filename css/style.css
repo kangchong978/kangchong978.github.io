@@ -74,6 +74,7 @@ hr {
 #menu {
   padding: 15px;
   transition: all 0.8s;
+
 }
 #menu.navbar-default {
   background-color: #fff;
@@ -220,6 +221,11 @@ a:focus,
 
 @supports (-webkit-touch-callout: none) {
   @media screen and (max-device-width: 767px) and (orientation: portrait) {
+    body,
+    html {  
+      width: 95% !important;
+      height: 100% !important;
+    }
     .intro {
       width: 111%;
     }
