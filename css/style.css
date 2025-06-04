@@ -261,6 +261,25 @@ header .intro-text {
   text-align: center;
 }
 /* Features Section */
+#pricing {
+  background: #f6f6f6;
+}
+#pricing i.fa {
+  font-size: 30px;
+  margin-bottom: 5px;
+  transition: all 0.5s;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  align-content: center;
+  border-radius:6%;
+  background-color: #d90909 ;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+}
+#pricing p {
+  margin-bottom: 40px;
+
+}
 #features {
   background: #f6f6f6;
 }
@@ -793,3 +812,4 @@ label {
 .card-content {
   flex-grow: 1;
 }
+ 
