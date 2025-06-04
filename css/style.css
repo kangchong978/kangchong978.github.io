@@ -237,7 +237,7 @@ a:focus,
 .intro h1 {
   font-family: "Open Sans", sans-serif;
   color: #fff;
-  font-size: 82px;
+  font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 0;
@@ -249,15 +249,15 @@ a:focus,
 }
 .intro p {
   color: #fff;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 30px;
   margin: 0 auto;
-  margin-bottom: 60px;
+  margin-bottom: 0px;
 }
 header .intro-text {
-  padding-top: 350px;
-  padding-bottom: 200px;
+  padding-top: 120px;
+  padding-bottom: 30px;
   text-align: center;
 }
 /* Features Section */
@@ -685,4 +685,111 @@ label {
   #about img {
     margin: 50px 0;
   }
+}
+
+/* style.css */
+
+.pricing-section {
+  background-color: #f9fafb;
+  padding: 3rem 1rem;
+}
+
+.pricing-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pricing-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+  height: 100%; /* ensure equal height for all cards */
+}
+
+.pricing-card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.card-price {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.card-description {
+  color: #4b5563;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-feature-list {
+  list-style: disc inside;
+  color: #374151;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+.card-feature + .card-feature {
+  margin-top: 0.5rem;
+}
+.card-button-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #cc0033; /* Tailwind's blue-600 */
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #cc0033; /* Tailwind's blue-700 */
+  color: #fff;
+}
+
+.card-content {
+  flex-grow: 1;
 }
