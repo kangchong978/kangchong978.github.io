@@ -74,7 +74,6 @@ hr {
 #menu {
   padding: 15px;
   transition: all 0.8s;
-
 }
 #menu.navbar-default {
   background-color: #fff;
@@ -105,7 +104,7 @@ hr {
   bottom: -1px;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, #FD0000 0%, #fff 100%);
+  background: linear-gradient(to right, #fd0000 0%, #fff 100%);
   content: "";
   transition: width 0.2s;
 }
@@ -148,17 +147,17 @@ hr {
   position: relative;
   margin-top: 40px;
   margin-bottom: 0px;
-  padding-bottom:0px;
+  padding-bottom: 0px;
 }
 /* .section-title h2::after { */
-  /* position: absolute; */
-  /* content: ""; */
-  /* background: linear-gradient(to right, #FD0000 0%, transparent 100%); */
-  /* height: 4px; */
-  /* width: 60px; */
-  /* bottom: 0; */
-  /* margin-left: -30px; */
-  /* left: 50%; */
+/* position: absolute; */
+/* content: ""; */
+/* background: linear-gradient(to right, #FD0000 0%, transparent 100%); */
+/* height: 4px; */
+/* width: 60px; */
+/* bottom: 0; */
+/* margin-left: -30px; */
+/* left: 50%; */
 /* } */
 .section-title p {
   font-size: 18px;
@@ -168,7 +167,7 @@ hr {
   text-transform: uppercase;
   color: #fff;
   background-color: #c53e3e;
-  background-image: linear-gradient(to right, #a20000 0%, #FD0000 100%);
+  background-image: linear-gradient(to right, #a20000 0%, #fd0000 100%);
   padding: 14px 34px;
   letter-spacing: 1px;
   margin: 0;
@@ -208,7 +207,7 @@ a:focus,
 /* Header Section */
 .intro {
   display: table;
-  width:100%;
+  width: 100%;
   padding: 0;
   background: url(../img/intro-bg.jpg) center center no-repeat;
   background-color: #e5e5e5;
@@ -218,11 +217,10 @@ a:focus,
   -o-background-size: cover;
 }
 
-
 @supports (-webkit-touch-callout: none) {
   @media screen and (max-device-width: 767px) and (orientation: portrait) {
     body,
-    html {  
+    html {
       width: 95% !important;
       height: 100% !important;
     }
@@ -272,13 +270,12 @@ header .intro-text {
   width: 60px;
   height: 60px;
   align-content: center;
-  border-radius:6%;
-  background-color: #d90909 ;
+  border-radius: 6%;
+  background-color: #d90909;
   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
 }
 #pricing p {
   margin-bottom: 40px;
-
 }
 #features {
   background: #f6f6f6;
@@ -291,13 +288,12 @@ header .intro-text {
   width: 60px;
   height: 60px;
   align-content: center;
-  border-radius:6%;
-  background-color: #d90909 ;
+  border-radius: 6%;
+  background-color: #d90909;
   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
 }
 #features p {
   margin-bottom: 40px;
-
 }
 /* About Section */
 #about {
@@ -354,7 +350,7 @@ header .intro-text {
   padding: 20px 0;
   /* background: linear-gradient(to right, #b73a3a 0%, #ce2929 100%); */
   /* color: #fff; */
-} 
+}
 
 #services li {
   color: #fff;
@@ -365,19 +361,22 @@ header .intro-text {
   /* overflow: hidden; */
   opacity: 0;
   transform: translateY(10px);
-  transition: 
-    opacity 0.5s ease,
-    transform 0.5s ease,
-    max-height 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease;
 }
-
-
 
 /* Fade-in animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); max-height: 0;}
-  to { opacity: 1; transform: translateY(0); max-height: 100;}
-} 
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 100;
+  }
+}
 #services li:before {
   content: "\f00c";
   font-family: "FontAwesome";
@@ -385,7 +384,7 @@ header .intro-text {
   font-size: 11px;
   font-weight: 300;
   padding-right: 8px;
-} 
+}
 
 #services h2 {
   /* color: #fff; */
@@ -397,7 +396,7 @@ header .intro-text {
   position: relative; /* To position the overlay within the box */
   overflow: hidden; /* Prevents overflow of the background image */
   border: 4px solid #fff;
-} 
+}
 
 /* Animate on hover */
 .service-box:hover li {
@@ -450,10 +449,10 @@ header .intro-text {
 #services p {
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: 20px;
-} 
+}
 /* Portfolio Section */
-#portfolio {
-  padding: 10px 0;
+#showcase {
+  padding: 40px 0;
 }
 .portfolio-item {
   margin: 1px -15px 0 -14px;
@@ -472,7 +471,7 @@ header .intro-text {
   background: linear-gradient(
     to right,
     rgba(99, 114, 255, 0.8) 0%,
-    rgba(92, 169, 251, 0.8) 100%
+    rgba(92, 169, 251, 0.8) 40%
   );
   padding: 30% 0 0;
   height: 100%;
@@ -748,13 +747,13 @@ label {
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease;
   height: 100%; /* ensure equal height for all cards */
 }
 
 .pricing-card:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
@@ -812,4 +811,3 @@ label {
 .card-content {
   flex-grow: 1;
 }
- 
